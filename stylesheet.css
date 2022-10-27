@@ -1,102 +1,259 @@
 @charset "UTF-8";
 .header-right {
-	float: right;
-	
+    float: right;
 }
-
 body {
-	font-family: Noway, "Noway", Noway, Arial, "sans-serif";
-	background-color: var(--bg-color);
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	font-style: normal;
-	font-weight: 200;
+    font-family: Raleway, "Raleway", Raleway, "sans-serif";
+    background-color: var(--bg-color);
+    margin-top: -45px;
+	margin-left: -33px;
+    margin-right:  -33px;
+    margin-bottom: -33px;
+    font-style: normal;
+    font-weight: 200;
+    min-height: 100vh;
+	
+	animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
-/* Add a background color to the top navigation */
-.topnav {
-  background-color: #ffffff;
-  overflow: hidden;
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+/*Flexbox Grid*/ .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 100px;
+    padding: 0px;
+}
+.grid-container > div {
+    /* [disabled]background-color: rgba(255, 255, 255, 0.8); */
+    text-align: left;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
+
+@media screen and (max-width: 750px) {
+/*Flexbox Grid*/ .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 15px;
+  padding: 5px;
+  font-size: 14px
+}
+.grid-container > div {
+    /* [disabled]background-color: rgba(255, 255, 255, 0.8); */
+    text-align: left;
+    padding: 10px 0; 
+	
+	}}
+@media screen and (max-width: 450px) {
+/*Flexbox Grid*/ .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0px;
+  padding: 0px;
+  font-size: 10px
+}
+.grid-container > div {
+    /* [disabled]background-color: rgba(255, 255, 255, 0.8); */
+    text-align: left;
+    padding: 5px 0;  
+	}}
+.item1 {
+  grid-row-start: 1;  grid-row-end: 3; }
+/* Scroll in text fade header*/
+header {
+  opacity: 0;
+  transition: opacity .5s .25s ease-out;
+}
+header.is-visible {
+  opacity: 1;
+}
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
-  display: block;
-  color: #000000;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: left;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 0px;
 }
-
 /* Add an active class to highlight the current page */
 .active {
   background-color: none;
   color: white;
 }
-
+/* Add a background color to the top navigation */
+.topnav {
+  background-color: transparent;
+  overflow: hidden;
+}
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
 }
-
 /* Dropdown container - needed to position the dropdown content */
 .dropdown {
   float: left;
   overflow: hidden;
 }
-	
 /* Style the dropdown button to fit inside the topnav */
 .dropdown .dropbtn {
-  font-size: 17px;
-  border: none;
-  outline: none;
-  color: black;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-left: 28px;
+    padding-bottom: 14px;
+    background-color: white;
+    font-family: inherit;
+    margin-top: 32px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 8px;
 }
-
+/* Tablet size (750PX)!*/
+@media screen and (max-width: 750px) {
+	.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding-top: 10px;
+    padding-right: 19px;
+    padding-left: 19px;
+    padding-bottom: 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin-top: 19px;
+    margin-right: 0px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+	.topnav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: left;
+    padding-top: 24px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	}}
+	/* Phone (450PX)!*/
+@media screen and (max-width: 450px) {
+	.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    text-align: left;
+    padding-top: 6px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 6px;
+    background-color: inherit;
+    font-family: inherit;
+    margin-top: 0px;
+    margin-right: 15px;
+    margin-left: 0px;
+    margin-bottom: 2px;
+}
+	.topnav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: left;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+	
+}
+.topnav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: l;
+    padding-top: 29px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
 /* Style the dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
+	.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+	background-color: #ffffff;	
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+	z-index: 1;
+	}
 /* Style the links inside the dropdown */
 .dropdown-content a {
   float: none;
   color: black;
+  background-color: #ffffff;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
-
 /* Add a dark background on topnav links and the dropdown button on hover */
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
+.topnav a:hover{
+    background-color: #ffffff;
+    color: black;
+    border-radius: 0px;
+	z-index: 1;
 }
-
+.dropdown:hover .dropbtn {
+    background-color: #AFD2D3;
+    color: black;
+    border-radius: 75px;
+	z-index:1;
+}
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #AFD2D3;
   color: black;
+  border-radius: 25px;
 }
-
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
 .dropdown:hover .dropdown-content {
   display: block;
+  border-radius: 25px;
 }
-
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
@@ -107,8 +264,6 @@ body {
     display: block;
   }
 }
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
@@ -119,34 +274,29 @@ body {
   .topnav.responsive a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: right;
   }
   .topnav.responsive .dropdown {float: none;}
   .topnav.responsive .dropdown-content {position: relative;}
   .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
-    text-align: left;
-
+    text-align: right;
   }
 }
-
 /* Style for creating an image with a text overlay fade */
-
 .container {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
-
 .image {
   opacity: 1;
   display: block;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 1s ease;
   backface-visibility: hidden;
 }
-
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -157,38 +307,210 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .container:hover .image {
-  opacity: 0.3;
+  opacity: .4;
 }
-
 .container:hover .middle {
   opacity: 1;
 }
-
 .text {
-  background-color: #04AA6D;
-  color: white;
-  font-size: 16px;
+  background-color: none;
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 16px 16px;
+}
+/*Flexbox text when website loads on mobile/tablet */
+@media screen and (max-width: 1000px) {
+  .text {
+     background-color: transparent;
+  color: black;
+  font-weight: 600;
+  font-size: 10px;
+  border-radius: 25px;
   padding: 16px 32px;
+  }
 }
-
-/* Type writer animation test*/
-
-html,body {
-  font-family: 'Raleway', sans-serif;
-  padding: 1em 2em;
-  font-size: 18px;
-  background: white;
-  color: black
-}
-
+/* Type writer animation and typeface*/
 h1,h2 {
   font-weight: 200;
   margin: 0.4em 0;
 }
-h1 { font-size: 3.5em; }
+h1 {
+    font-size: 3.5em;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
 h2 {
   color: #888;
   font-size: 2em;
 }
+/*font size will be scaled for mobile purposes, tablet viewing not required*/
+@media screen and (max-width: 450px) {
+h1,h2 {
+  font-weight: 100;
+  margin: 0.4em 0;
+}
+h1 { font-size: 2.7em; }
+h2 {
+  color: #888;
+  font-size: 1.5em; 
+	} }
+html,body {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    font-size: 18px;
+    background: white;
+    color: black
+}
+/* This is for CSS flexbox for homepage gallery*/
+.row { display: flex; flex-wrap: wrap; }
+/* Create three  or 2 equal columns that sits next to each other */
+.column {
+    
+	flex: 100%;
+    max-width: 49%; /*adjust to 33% value for 3 columns*/
+    align-content: center; padding-top: 3px; padding-right: 0px; padding-left: 6px; padding-bottom: 0px; }
+.column img { margin-top: 10px;border-radius: 13px; 
+	vertical-align: middle;
+	horizontal-align: middle; width: 100%; }
+/* Responsive layout - makes a 2 column-layout instead of 3 columns */
+@media screen and (max-width: 850px) {
+  .column { flex: 33%; max-width: 100%; } }
+/* Responsive layout - makes the 1 column stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*Photography Class is slighty different from the regular ones!, used to showcase 3 columns */
+.photocolumn {
+    
+	flex: 100%;
+    max-width: 24%; /*adjust to 32% value for 3 columns*/
+    align-content: center; padding-top: 3px; padding-right: 0px; padding-left: 6px; padding-bottom: 0px; }
+.photocolumn img { margin-top: 10px;border-radius: 13px; 
+	vertical-align: middle;
+	horizontal-align: middle; width: 100%; }
+/* Responsive layout - makes a 2 column-layout instead of 3 columns */
+@media screen and (max-width: 850px) {
+  .photocolumn { flex: 33%; max-width: 100%; } }
+/* Responsive layout - makes the 1 column stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .photocolumn {
+    flex: 100%;
+    max-width: 30%;
+  }
+}
+/* (A) LIGHTBOX BACKGROUND */
+#lightbox {
+  /* (A1) COVERS FULLSCREEN */
+  position: fixed; z-index: 999;
+  top: 0; left: 0;
+  width: 99vw; height: 99vh;
+ 
+  /* (A2) BACKGROUND */
+  background: rgba(0, 0, 0, 0.5);
+ 
+  /* (A3) CENTER IMAGE ON SCREEN */
+  display: flex;
+  align-items: center;
+ 
+  /* (A4) HIDDEN BY DEFAULT */
+  visibility: hidden;
+  opacity: 0;
+ 
+  /* (A5) SHOW/HIDE ANIMATION */
+  transition: opacity ease 0.4s;
+}
+/* (A6) TOGGLE VISIBILITY */
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+/* (B) LIGHTBOX IMAGE */
+#lightbox img {
+  /* (B1) DIMENSIONS */
+  width: 95%;
+  height: 95%;
+  /* (B2) IMAGE FIT */ /* contain | cover | fill | scale-down */
+  object-fit: contain;
+}
+/* (C) LIGHTBOX IMAGE - FULLSCREEN ALTERNATIVE *
+#lightbox img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+/* Style buttons */
+.btn {
+  background-color: #AFD2D3;
+  border: solid;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
+}
+@media screen and (max-width: 700px) {
+.btn {
+  background-color: #AFD2D3;
+  border: solid;
+  color: white;
+  padding: 6px 5px;
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 10px;
+	}}
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: gray;
+}
+/* Rounded Image div class and image refitting*/
+img.rounded-corners{
+    border-radius: 30px;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+@media screen and (max-width: 950px) {
+  img.rounded-corners {
+ max-width: 100%; 
+	  border-radius: 25px; 
+	  height: auto; 
+	margin-left: 150px;
+	  margin-top: 40px;
+	 } }
+@media screen and (max-width: 650px) {
+  img.rounded-corners {
+  max-width: 80%; 
+  border-radius: 15px; 
+  height: auto; 
+  margin-top: 40px;
+	} }
+
+@media screen and (max-width: 450px){
+  .img { height:30%; 
+	  max-width: auto; 
+	  border-radius: 5px;	}	}	
+.link {
+   color: #FFFFFF;
+   text-color: #FFFFFF;
+   background-color: none;
+	}
+.animated {
+  transition: all 300ms ease-in-out; 
+}
+.fade-in, .fade-out.inactive { /* End State */
+  opacity: 1;
+}
+.fade-in.inactive, .fade-out { /* Default State */
+  opacity: 0;
+	}

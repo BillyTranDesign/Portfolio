@@ -1,73 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-													   
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<script src="jquery-3.6.1.min.js"></script>
 <link rel="stylesheet" href="stylesheet.css">
+<link rel="icon" type="image/x-icon" href="Portfolio Assets/Resume/BillyLogo.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Homepage</title>
+<title>BillyTran.Design Homepage</title>
 </head> 
-<!--- CSS and Javascript layouts --->
-<div class="topnav" id="myTopnav"> <!--- Div Class Header ---->
-<a href="BillyTranDesigns.html"> </a> 
-		<div class="header-right"> <!--- Header Buttons --->
 	
+<div class="topnav" id="myTopnav"> 
+	<div class="scrollFade"><a href="index.html"><img src="Portfolio Assets/Resume/BillyOnBlue.png" alt="billylogo" style="width: 60% ; margin-top: -23px"></a> </div> 
+  <!--- Navbar ---->
+		<div class="header-right"> 
+			<!--- Navbar Selection Buttons --->	
 			
-			
+	<div class="scrollFade">
 	<div class="dropdown">
-		
-    <button class="dropbtn">projects
+    <button class="dropbtn" style="font-size: medium">projects   ▾
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#">BA Senior Project</a>
-      <a href="#">Designs</a>
-      <a href="#">Photography</a>
+ <a href="selfinsightapp.html">Self Insight</a>
+      <a href="LumiNous.html">Peachy Keen by <br> Lumi-nous</a>
+		<a href="Dr.Loos.html">Dr. Loo's Natural Remedies</a>
+      <a href="HappyHam.html">HappyHam Tea</a>
+		<a href="Partico.html">Partico</a>
+		<a href="katani.html">Katani Orlando</a>
+      <a href="Projects_Photography.html">Photography</a>
 		
     </div>
-  </div> <!--- Dropdown Names ---->
+  </div> <!--- Nav BarDropdown Names ---->
 
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-			
-  <a href="#home" class="active">contact</a>
   <a href="about.html">about</a>
 </div>
 </div>
-			
-	<br>
-	<br>
-	<br>
-	<br>
+</div>
+	
+	<br><br><br><br>
 <body>
-	<!--- Insert your image here---->
+<!--- Introduction + Typewriter Animation---->
 		
 <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
-<h1> Hi I'm Billy, <span
-class="txt-rotate"
-     data-period="1000"
-    data-rotate = '["a designer.", "a photographer.", "a web-developer."]' >
- </span>
-</h1> <!--- span typewriter animation---->
+<h1>&nbsp;</h1>
 	
+	<h1> Hi I'm Billy,
+	<span 
+		  class="txt-rotate" 
+		  data-period="5000"
+		  data-rotate='["a graphic designer!", "a photographer!", "a web-designer!"]'></span> 
+		</h1> 
+<!--- span typewriter animation---->
+	<header class="header show-on-scroll">
 <h2>Based in the Bay Area, California.</h2>
-	<br><br><br><br><br>
-<h3> My Work </h3>
-
-<div class="container"> <!---- example photo w/ JS embed--->
-  <img src="images/CallingIntention.png" alt="Example for Gallery" width="100px" height="300px" class="image" style="width:100%">
-  <div class="middle">
-    <div class="text">Senior Project: Calling Intentions</div>
-</div></div>
-
-	<h1>Hello!</h1>
-	<p align="left">A New Yorker at heart, currently residing within San Jose, California.&nbsp;&nbsp; <br>
-		A designer, photographer, and web-developer. <br>
-		Refining my skills while attending San Jose State University.<br>
-		Striving to obtain my BA degree in Design Studies Graphic Design<br>
-with some background in drawing, design, and photography.</p>
-<script src="BillyDesignJavaScript.js"></script>	
+	</header>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <header class="header show-on-scroll">
 	
-</body>
+    <h2 align="left"> Here are some stuff I've worked on... </h2>
+	</header>
+<br><br><br>
+
+<script src="BillyDesignJavaScript.js"></script>	
+	<div class="scrollFade">	
+<!--- thumbnail gallery - homepage--->
+	<div class="row">
+  <div class="column">
+<div class="container">		
+	 <a href="selfinsightapp.html">
+    <img src="Portfolio Assets/Design /SelfInsightMockup.jpg"  alt="SelfInsight" class="image" style="width: 100%; padding-left: 0px;"></a>
+			 <div class="middle">
+				 <div class="text"><h3>Self Insight</h3></div>
+			 </div></div>
+	  
+	  	    
+	 <div class="container">		
+    <img src="Portfolio Assets/Design /DrLoos_NaturalRemedies.jpg"  alt="DrLoo" class="image" style="width:100%">
+			 <div class="middle">
+		 <div class="text"><h3>Dr Loo's Natural Remedies</h3></div>
+			 </div></div>			 
+	 <div class="container">
+		<a href="Partico.html">
+    <img src="Portfolio Assets/Design /ParticoThumbnail.jpg" alt="Leveraging Calling Intentions" class="image" style="width:100%"></a>
+	<div class="middle"> 
+		<div class="text"><h3>Partico</h3>
+		</div></div></div>	
+  </div>
+  <div class="column">
+	  
+		  <div class="container">
+    <img src="Portfolio Assets/Design /Billy_Tran_Lumi-Nous3.jpg" alt="PeachyKeen" class="image" style="width:100%">
+	 <div class="middle">
+	  <div class="text"><h3>Peachy Keen by Lumi-nous</h3></div>
+	  </div></div> 
+	  
+	<div class="container">
+		
+    <img src="Portfolio Assets/Design /HappyHamBoba.jpg" alt="Boba" class="image" style="width:100%">
+	<div class="middle"> 
+		<div class="text"><h3>HappyHam Tea</h3>
+		</div></div></div>	
+	
+	
+			
+<div class="container"><a href="katani.html">
+    <img src="Portfolio Assets/Design /jjk-cupsleeve-mockup-2.jpg" alt="JJK" class="image" style="width:100%"></a>
+	 <div class="middle">
+ <div class="text"><h3>Katani Orlando</h3>
+			 </div></div></div>
+	 
+	   
+	  <br><br><br>
+
+   </div>
+		</div></div>
+	<br><br><br><br>
+	</body>
 </html>

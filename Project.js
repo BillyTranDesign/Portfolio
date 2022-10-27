@@ -1,3 +1,5 @@
+// JavaScript Document
+
 // JavaScript Document/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 // Top Navigator JS */
   var x = document.getElementById("myTopnav");
@@ -6,76 +8,29 @@
   } else {
     x.className = "topnav";
   }
-	// This is for the type carousel//
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 5000) || 1000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
 
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 300 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
-
-
-
-window.onload = function() {
-	// Code 1 - text carousel 
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-
-
-};
-
-    
-  
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
+window.onload = () => {
+  // (A) GET LIGHTBOX & ALL .ZOOMD IMAGES
+  let all = document.getElementsByClassName("zoomD"),
+      lightbox = document.getElementById("lightbox");
+ 
+  // (B) CLICK TO SHOW IMAGE IN LIGHTBOX
+  // * SIMPLY CLONE INTO LIGHTBOX & SHOW
+  if (all.length>0) { for (let i of all) {
+    i.onclick = () => {
+      let clone = i.cloneNode();
+      clone.className = "";
+      lightbox.innerHTML = "";
+      lightbox.appendChild(clone);
+      lightbox.className = "show";
+    };
+  }}
+ 
+  // (C) CLICK TO CLOSE LIGHTBOX
+  lightbox.onclick = () => {
+    lightbox.className = "";
+  };
+}; 
 
 //  scroll in text fade
 // Detect request animation frame
@@ -168,42 +123,4 @@ var hideAnimated = function hideAnimated(e) {
 }
 
 window.addEventListener('scroll', debounce(checkAnimation, 20)); 
-
-// test for fade in out scroll image
-
-var fadeElements = document.getElementsByClassName('scrollFade');
-
-function scrollFade() {
-  var viewportBottom = window.scrollY + window.innerHeight;
-
-  for (var index = 0; index < fadeElements.length; index++) {
-    var element = fadeElements[index];
-    var rect = element.getBoundingClientRect();
-
-    var elementFourth = rect.height/4;
-    var fadeInPoint = window.innerHeight - elementFourth;
-    var fadeOutPoint = -(rect.height/2);
-
-    if (rect.top <= fadeInPoint) {
-      element.classList.add('scrollFade--visible');
-      element.classList.add('scrollFade--animate');
-      element.classList.remove('scrollFade--hidden');
-    } else {
-      element.classList.remove('scrollFade--visible');
-      element.classList.add('scrollFade--hidden');
-    }
-
-    if (rect.top <= fadeOutPoint) {
-      element.classList.remove('scrollFade--visible');
-      element.classList.add('scrollFade--hidden');
-    }
-  }
-}
-
-document.addEventListener('scroll', scrollFade);
-window.addEventListener('resize', scrollFade);
-document.addEventListener('DOMContentLoaded', function() {
-  scrollFade();
-});
-
 
