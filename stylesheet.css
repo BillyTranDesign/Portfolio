@@ -86,7 +86,7 @@ header.is-visible {
     color: #000000;
     text-align: left;
     padding-top: 10px;
-    padding-right: 0px;
+    padding-right: 5px;
     padding-left: 0px;
     padding-bottom: 0px;
     text-decoration: none;
@@ -209,6 +209,8 @@ header.is-visible {
     text-decoration: none;
     font-size: 16px;
     margin-bottom: 0px;
+    margin-left: 9px;
+    margin-right: 11px;
 }
 /* Style the dropdown content (hidden by default) */
 	.dropdown-content {
@@ -369,27 +371,31 @@ html,body {
 }
 /* This is for CSS flexbox for homepage gallery*/
 .row { display: flex; flex-wrap: wrap; }
-/* Create three  or 2 equal columns that sits next to each other */
+/* Create three  or 2 equal columns that sits next to each other, used for main projects excl. elan beaute */
 .column {
-    
-	flex: 100%;
+    flex: 100%;
     max-width: 49%; /*adjust to 33% value for 3 columns*/
-    align-content: center; padding-top: 3px; padding-right: 0px; padding-left: 6px; padding-bottom: 0px; }
+    align-content: center;
+    padding-top: 0px;
+    padding-right: 2px;
+    padding-left: 6px;
+    padding-bottom: 4px;
+}
 .column img { margin-top: 10px;border-radius: 13px; 
 	vertical-align: middle;
 	horizontal-align: middle; width: 100%; }
 /* Responsive layout - makes a 2 column-layout instead of 3 columns */
 @media screen and (max-width: 850px) {
   .column { flex: 33%; max-width: 100%; } }
-/* Responsive layout - makes the 1 column stack on top of each other instead of next to each other */
+/* Responsive layout - makes the 2 column stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .column {
-    flex: 100%;
+    flex: 33%;
     max-width: 100%;
   }
 }
 
-/*Photography Class is slighty different from the regular ones!, used to showcase 3 columns */
+/*Photography Class is slighty different from the regular ones!, used to showcase 4, this switches to 2 columns when on mobile devices */
 .photocolumn {
     
 	flex: 100%;
@@ -405,7 +411,7 @@ html,body {
 @media screen and (max-width: 700px) {
   .photocolumn {
     flex: 100%;
-    max-width: 30%;
+    max-width: 45%;
   }
 }
 /* (A) LIGHTBOX BACKGROUND */
