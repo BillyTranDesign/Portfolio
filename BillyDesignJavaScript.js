@@ -205,5 +205,3 @@ window.addEventListener('resize', scrollFade);
 document.addEventListener('DOMContentLoaded', function() {
   scrollFade();
 });
-
-
