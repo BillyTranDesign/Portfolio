@@ -523,7 +523,7 @@ img.rounded-corners{
 
 .d1 
 video {
-    margin: 10px;
+    position: center;
     width: 100%;
     max-width: 1080px;
 }
