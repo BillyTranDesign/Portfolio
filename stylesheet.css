@@ -520,3 +520,10 @@ img.rounded-corners{
 .fade-in.inactive, .fade-out { /* Default State */
   opacity: 0;
 	}
+
+.d1 
+video {
+    margin: 10px;
+    width: 100%;
+    max-width: 1080px;
+}
