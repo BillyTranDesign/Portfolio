@@ -453,3 +453,7 @@ video {
     width: 100%;
     max-width: 1080px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
