@@ -18,7 +18,6 @@ h1 {
 }
 h2 {
   font-family: 'visbybold', sans-serif; 
-	font-size: 8px;
 	 color: #314f94;/* Use your custom font */
 }
 h3 {
@@ -277,17 +276,21 @@ h2 {
 }
 /*font size will be scaled for mobile purposes, tablet viewing not required*/
 @media screen and (max-width: 450px) {
-h1,h2 {
+h1,h2,h3 {
   font-weight: 200;
   margin: 0.4em 0;
 }
-h1 { font-size: 1.7em; }
+h1 { font-size: 2.4em; }
 h2 {
   color: #314f94;
-  font-size: 1.0em; 
-	} }
+  font-size: 1.7em; 
+	}
+h3 {
+  color: #314f94;
+  font-size: 1.3em; 
+	}}
 html,body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'visby', sans-serif;
     padding-top: 1em;
     padding-right: 2em;
     padding-left: 2em;
@@ -302,12 +305,12 @@ html,body {
 .column {
 	box-sizing: border-box;
     flex: 100%;
-    max-width: 49%; /*adjust to 33% value for 3 columns, 49% for 2,*/
+    max-width: 50%; /*adjust to 33% value for 3 columns, 50% for 2,*/
     align-content: center;
     padding-top: 0px;
-    padding-right: 2px;
-    padding-left: 2px;
-    padding-bottom: 2px;
+    padding-right: 1px;
+    padding-left: 1px;
+    padding-bottom: 0px;
 }
 .column img { }
 /* Responsive layout - makes a 2 column-layout instead of 3 columns */
@@ -457,3 +460,140 @@ html {
   scroll-behavior: smooth;
 }
 
+.about-gif {
+  max-width: 100%;   /* keeps it responsive */
+  height: auto;      /* preserves proportions */
+  display: block;
+  margin: 0 auto;    /* centers the gif */
+}
+
+.responsive-image-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Desktop image - visible by default */
+.about-gif-desktop {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mobile image - hidden by default */
+.about-gif-mobile {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    margin: 0 auto;
+}
+
+/* Media query for mobile devices - matches your existing breakpoints */
+@media screen and (max-width: 700px) {
+    .about-gif-desktop {
+        display: none;
+    }
+    
+    .about-gif-mobile {
+        display: block;
+    }
+}
+
+/* Responsive Image Styles - Add to your stylesheet.css */
+.responsive-image-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Desktop image - visible by default */
+.about-gif-desktop {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mobile image - hidden by default */
+.about-gif-mobile {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    margin: 0 auto;
+}
+
+/* Media query for mobile devices - matches your existing breakpoints */
+@media screen and (max-width: 700px) {
+    .about-gif-desktop {
+        display: none;
+    }
+    
+    .about-gif-mobile {
+        display: block;
+    }
+}
+
+/* Button container for centering */
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Center align buttons */
+.btn {
+    margin: 10px 8px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: transparent;
+    border: 2px solid #314f94;
+    color: #314f94;
+}
+
+.btn .link {
+    color: #314f94;
+}
+
+.btn:hover {
+    background-color: #314f94;
+    color: white;
+}
+
+.btn:hover .link {
+    color: white;
+}
+
+/* Mobile button centering and sizing */
+@media screen and (max-width: 700px) {
+    .button-container {
+        text-align: center;
+    }
+    
+    .btn {
+        display: block;
+        margin: 15px auto;
+        max-width: 200px;
+        width: 90%;
+        padding: 10px 10px;
+        font-size: 16px;
+        min-height: 0px;
+        border-radius: 35px;
+        background-color: transparent;
+        border: 2px solid #314f94;
+        color: #314f94;
+    }
+    
+    .btn .link {
+        font-size: 16px;
+        color: #314f94;
+    }
+    
+    .btn:hover {
+        background-color: #314f94;
+        color: white;
+    }
+    
+    .btn:hover .link {
+        color: white;
+    }
+}
