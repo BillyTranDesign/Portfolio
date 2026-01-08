@@ -343,6 +343,29 @@ html,body {
     max-width: 45%;
   }
 }
+
+
+/*3 COLUM GRID*/
+.threecolumn {
+    
+	flex: 100%;
+    max-width: 32%; /*adjust to 32% value for 3 columns*/
+    align-content: center; padding-top: 3px; padding-right: 0px; padding-left: 6px; padding-bottom: 0px; }
+.threecolumn img { margin-top: 10px;border-radius: 13px; 
+	vertical-align: middle;
+	horizontal-align: middle; width: 100%; }
+/* Responsive layout - makes a 2 column-layout instead of 3 columns */
+@media screen and (max-width: 850px) {
+  .threecolumn 
+	{ flex: 33%; 
+	  max-width: 100%; } }
+/* Responsive layout - makes the 1 column stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .threecolumn {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
 /* (A) LIGHTBOX BACKGROUND */
 #lightbox {
   /* (A1) COVERS FULLSCREEN */
@@ -567,3 +590,4 @@ html {
         color: white;
     }
 }
+
