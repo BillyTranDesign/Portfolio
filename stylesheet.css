@@ -3,15 +3,15 @@
   font-family: 'visbybold'; /* Give your font a name */
   src: url('fonts/VisbyBold.otf') format('otf'),
        url('fonts/VisbyRegular.otf') format('otf'); /* Paths to font files */
-  font-weight: normal; 
+  font-weight: normal;
   font-style: normal;
-	 } 
+	 }
 @font-face {
   font-family: 'visbyregular'; /* Give your font a name */
   src: url('fonts/VisbyRegular.otf') format('otf');
-  font-weight: normal; 
+  font-weight: normal;
   font-style: normal;
-	 } 
+	 }
 h1 {
   font-family: 'visbybold', sans-serif; margin-left: 25px;
 	 color: #314f94;/* Use your custom font */
@@ -38,10 +38,9 @@ h4 {
 }
 .header-right {
     float: right;
-	
+
 }
 body {
-
     background-color: var(--bg-color);
     margin-top: -47px;
 	margin-left: -65px;
@@ -50,12 +49,12 @@ body {
     font-style: normal;
     font-weight: 200;
     min-height: 100vh;
-	
+
 	animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-  
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -78,8 +77,6 @@ body {
     padding-top: 0px;
     padding-bottom: 0px;
 }
-
-
 @media screen and (max-width: 750px) {
 /*Flexbox Grid*/ .grid-container {
   display: grid;
@@ -91,8 +88,8 @@ body {
 .grid-container > div {
     /* [disabled]background-color: rgba(255, 255, 255, 0.8); */
     text-align: left;
-    padding: 10px 0; 
-	
+    padding: 10px 0;
+
 	}}
 @media screen and (max-width: 450px) {
 /*Flexbox Grid*/ .grid-container {
@@ -105,7 +102,7 @@ body {
 .grid-container > div {
     /* [disabled]background-color: rgba(255, 255, 255, 0.8); */
     text-align: left;
-    padding: 5px 0;  
+    padding: 5px 0;
 	}}
 .item1 {
   grid-row-start: 1;  grid-row-end: 3; }
@@ -157,7 +154,6 @@ header.is-visible {
     margin-bottom: 0px;
 	}
 	/* Phone (450PX)!*/
-
 	.topnav a {
     float: left;
     display: block;
@@ -172,7 +168,6 @@ header.is-visible {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-	
 
 .topnav a {
     float: left;
@@ -189,8 +184,6 @@ header.is-visible {
     margin-left: 0px;
     margin-right: 11px;
 }
-
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
@@ -283,11 +276,11 @@ h1,h2,h3 {
 h1 { font-size: 2.4em; }
 h2 {
   color: #314f94;
-  font-size: 1.7em; 
+  font-size: 1.7em;
 	}
 h3 {
   color: #314f94;
-  font-size: 1.3em; 
+  font-size: 1.3em;
 	}}
 html,body {
     font-family: 'visby', sans-serif;
@@ -296,7 +289,7 @@ html,body {
     padding-left: 2em;
     padding-bottom: 1em;
     font-size: 18px;
-    background: white;
+    background: #FBF6EC;   /* cream */
     color: black
 }
 /* This is for CSS flexbox for homepage gallery*/
@@ -323,14 +316,13 @@ html,body {
     max-width: 100%;
   }
 }
-
 /*Photography Class is slighty different from the regular ones!, used to showcase 4, this switches to 2 columns when on mobile devices */
 .photocolumn {
-    
+
 	flex: 100%;
     max-width: 24%; /*adjust to 32% value for 3 columns*/
     align-content: center; padding-top: 3px; padding-right: 0px; padding-left: 6px; padding-bottom: 0px; }
-.photocolumn img { margin-top: 10px;border-radius: 13px; 
+.photocolumn img { margin-top: 10px;border-radius: 13px;
 	vertical-align: middle;
 	horizontal-align: middle; width: 100%; }
 /* Responsive layout - makes a 2 column-layout instead of 3 columns */
@@ -343,21 +335,19 @@ html,body {
     max-width: 45%;
   }
 }
-
-
 /*3 COLUM GRID*/
 .threecolumn {
-    
+
 	flex: 100%;
     max-width: 32%; /*adjust to 32% value for 3 columns*/
     align-content: center; padding-top: 3px; padding-right: 0px; padding-left: 6px; padding-bottom: 0px; }
-.threecolumn img { margin-top: 10px;border-radius: 13px; 
+.threecolumn img { margin-top: 10px;border-radius: 13px;
 	vertical-align: middle;
 	horizontal-align: middle; width: 100%; }
 /* Responsive layout - makes a 2 column-layout instead of 3 columns */
 @media screen and (max-width: 850px) {
-  .threecolumn 
-	{ flex: 33%; 
+  .threecolumn
+	{ flex: 33%;
 	  max-width: 100%; } }
 /* Responsive layout - makes the 1 column stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
@@ -372,18 +362,18 @@ html,body {
   position: fixed; z-index: 999;
   top: 0; left: 0;
   width: 99vw; height: 99vh;
- 
+
   /* (A2) BACKGROUND */
   background: rgba(0, 0, 0, 0.5);
- 
+
   /* (A3) CENTER IMAGE ON SCREEN */
   display: flex;
   align-items: center;
- 
+
   /* (A4) HIDDEN BY DEFAULT */
   visibility: hidden;
   opacity: 0;
- 
+
   /* (A5) SHOW/HIDE ANIMATION */
   transition: opacity ease 0.4s;
 }
@@ -437,34 +427,32 @@ img.rounded-corners{
     height: auto;
     z-index: -1;
 }
-
 @media screen and (max-width: 950px) {
   img.rounded-corners {
- max-width: 100%; 
-	  border-radius: 25px; 
-	  height: auto; 
+ max-width: 100%;
+	  border-radius: 25px;
+	  height: auto;
 	margin-left: 150px;
 	  margin-top: 40px;
 	 } }
 @media screen and (max-width: 650px) {
   img.rounded-corners {
-  max-width: 80%; 
-  border-radius: 20px; 
-  height: auto; 
+  max-width: 80%;
+  border-radius: 20px;
+  height: auto;
   margin-top: 40px;
 	} }
-
 @media screen and (max-width: 450px){
-  .img { height:30%; 
-	  max-width: auto; 
-	  border-radius: 5px;	}	}	
+  .img { height:30%;
+	  max-width: auto;
+	  border-radius: 5px;	}	}
 .link {
    color: #FFFFFF;
    text-color: #FFFFFF;
    background-color: none;
 	}
 .animated {
-  transition: all 300ms ease-in-out; 
+  transition: all 300ms ease-in-out;
 }
 .fade-in, .fade-out.inactive { /* End State */
   opacity: 1;
@@ -472,8 +460,7 @@ img.rounded-corners{
 .fade-in.inactive, .fade-out { /* Default State */
   opacity: 0;
 	}
-
-.d1 
+.d1
 video {
 	position: center;
     width: 100%;
@@ -482,14 +469,12 @@ video {
 html {
   scroll-behavior: smooth;
 }
-
 /* Responsive Image Styles - Add to your stylesheet.css */
 .responsive-image-container {
     width: 100%;
     text-align: center;
     margin: 20px 0;
 }
-
 /* Desktop image - visible by default */
 .about-gif-desktop {
     max-width: 100%;
@@ -497,7 +482,6 @@ html {
     display: block !important;
     margin: 0 auto;
 }
-
 /* Mobile image - hidden by default */
 .about-gif-mobile {
     max-width: 100%;
@@ -505,35 +489,31 @@ html {
     display: none !important;
     margin: 0 auto;
 }
-
 /* Media query for mobile devices - matches your existing breakpoints */
 @media screen and (max-width: 700px) {
     .about-gif-desktop {
         display: none !important;
     }
-    
+
     .about-gif-mobile {
         display: block !important;
     }
 }
-
 /* Additional mobile targeting for iOS devices */
 @media only screen and (max-device-width: 767px) {
     .about-gif-desktop {
         display: none !important;
     }
-    
+
     .about-gif-mobile {
         display: block !important;
     }
 }
-
 /* Button container for centering */
 .button-container {
     text-align: center;
     margin: 20px 0;
 }
-
 /* Center align buttons */
 .btn {
     margin: 10px 8px;
@@ -543,26 +523,22 @@ html {
     border: 2px solid #314f94;
     color: #314f94;
 }
-
 .btn .link {
     color: #314f94;
 }
-
 .btn:hover {
     background-color: #314f94;
     color: white;
 }
-
 .btn:hover .link {
     color: white;
 }
-
 /* Mobile button centering and sizing */
 @media screen and (max-width: 700px) {
     .button-container {
         text-align: center;
     }
-    
+
     .btn {
         display: inline-block;
         margin: 10px 5px;
@@ -575,19 +551,227 @@ html {
         border: 2px solid #314f94;
         color: #314f94;
     }
-    
+
     .btn .link {
         font-size: 12px;
         color: #314f94;
     }
-    
+
     .btn:hover {
         background-color: #314f94;
         color: white;
     }
-    
+
     .btn:hover .link {
         color: white;
     }
 }
 
+/* =====================================================================
+   THUMBNAIL FRAME  -  billytran.design
+   ---------------------------------------------------------------------
+   Border + rounding live on the LINK; the image is clipped to it with
+   overflow:hidden, so there's NO white hairline at the corners.
+   Self-contained so the offset block never overlaps the next column.
+   To adjust: blue is #314f94 (3x), rounding 16px, border 5px,
+   offset 10px (appears in the padding AND the box-shadow - keep equal).
+   ===================================================================== */
+.row .container{
+  box-sizing:border-box;
+  padding:0 10px 10px 0;        /* room for the 10px offset block */
+  margin-bottom:16px;
+}
+.row .container > a{
+  display:block;
+  box-sizing:border-box;
+  overflow:hidden;              /* clips the image to the rounded corners */
+  border:5px solid #314f94;
+  border-radius:16px;
+  box-shadow:10px 10px 0 0 #314f94;   /* the solid offset block */
+  font-size:0;
+  line-height:0;
+}
+.row .container > a .image{
+  display:block;
+  width:100%;
+  border:0 !important;
+  border-radius:0 !important;   /* overrides inline border-radius */
+  padding-top:0 !important;     /* overrides inline padding-top:5px */
+}
+
+/* --- same blue frame for the OTHER gallery layouts (photography /
+   3-column / grid). These images aren't wrapped the same way, so the
+   border goes directly on the image. ----------------------------------- */
+.photocolumn img,
+.threecolumn img,
+.grid-container img{
+  box-sizing:border-box;
+  border:5px solid #314f94;
+  border-radius:16px;
+  box-shadow:8px 8px 0 0 #314f94;   /* the offset blue block */
+  margin-bottom:16px;               /* room so the block doesn't crowd the next row */
+}
+
+/* --- bare gallery images on project pages (direct <img> inside .column,
+   e.g. the Golden Nest / lightbox galleries). The > makes sure this does
+   NOT hit the wrapped "You may also like" thumbnails. ------------------- */
+.row > .column > img{
+  box-sizing:border-box;
+  width:calc(100% - 10px) !important; /* leaves room for the offset block so it
+                                         doesn't overlap the next column */
+  border:5px solid #314f94;
+  border-radius:16px !important;      /* overrides the inline border-radius:15px */
+  box-shadow:8px 8px 0 0 #314f94;
+  margin-bottom:16px;
+  padding-top:0 !important;           /* overrides the inline padding-top:11px */
+}
+
+/* --- About page GIF (desktop + mobile versions) -------------------- */
+.about-gif-desktop,
+.about-gif-mobile{
+  box-sizing:border-box;
+  border:5px solid #314f94;
+  border-radius:16px;
+  box-shadow:8px 8px 0 0 #314f94;
+  margin-bottom:18px;
+}
+
+/* =====================================================================
+   STICKY TRANSLUCENT HEADER
+   ---------------------------------------------------------------------
+   Targets ONLY #myTopnav (the header) so the footer, which also uses
+   class "topnav", is NOT affected. Lower the 0.72 for more transparency.
+   ===================================================================== */
+#myTopnav{
+  position: -webkit-sticky;     /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 100;                 /* above content, below the lightbox (999) */
+  padding: 8px 0 14px;          /* keeps the logo off the top/bottom edges */
+  background-color: rgba(251,246,236,0.72);   /* translucent cream */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(49,79,148,0.12);
+}
+
+/* =====================================================================
+   LOGO SIZING  -  keeps the new logo a tidy height in the header
+   (targets only the logo image, not the nav links)
+   ===================================================================== */
+#myTopnav > .scrollFade img{
+  height:auto;
+  width:auto;
+  max-height:64px;       /* desktop logo height - raise/lower to taste */
+  margin-top:0;
+}
+@media screen and (max-width: 850px){
+  #myTopnav > .scrollFade img{ max-height:52px; }   /* a touch smaller on mobile */
+}
+
+/* =====================================================================
+   MOBILE HAMBURGER MENU  -  pure CSS, no JavaScript
+   ---------------------------------------------------------------------
+   Needs two lines added to your HTML inside #myTopnav, right after the
+   logo and before <div class="header-right">:
+
+     <input type="checkbox" id="navtoggle" class="nav-toggle">
+     <label for="navtoggle" class="nav-burger" aria-label="Menu"></label>
+
+   The hidden checkbox remembers open/closed; the label is the button.
+   Collapses below 850px. Tweak that number to taste.
+   ===================================================================== */
+.nav-toggle{ position:absolute; left:-9999px; opacity:0; }  /* hidden but still toggleable */
+.nav-burger{ display:none; }                                /* hidden on desktop */
+.nav-burger::before{ content:"\2630"; }                     /* the hamburger icon */
+
+@media screen and (max-width: 850px){
+  /* show the hamburger button, top-right */
+  .nav-burger{
+    display:block;
+    position:absolute;
+    top:16px;
+    right:16px;
+    z-index:3;
+    font-size:30px;
+    line-height:1;
+    color:#314f94;
+    cursor:pointer;
+    padding:4px 8px;
+  }
+  #navtoggle:checked ~ .nav-burger::before{ content:"\2715"; }  /* turns into an X when open */
+
+  /* collapse the menu by default */
+  /* CLOSED state - collapsed and smoothly animatable (no display:none) */
+  #myTopnav .header-right{
+    float:none;
+    width:100%;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    margin-top:8px;
+    padding-top:0;
+    background-color:rgba(251,246,236,0.96);
+    border-top:0 solid rgba(49,79,148,0.12);
+    transition:
+      max-height  .5s cubic-bezier(.65,0,.35,1),
+      padding-top .5s cubic-bezier(.65,0,.35,1),
+      border-top-width .5s ease,
+      opacity     .4s ease;
+  }
+  /* OPEN state - liquid drop */
+  #navtoggle:checked ~ .header-right{
+    max-height:320px;     /* a bit more than the menu's real height */
+    opacity:1;
+    padding-top:44px;     /* clears the X button */
+    border-top-width:1px;
+  }
+
+  #myTopnav .header-right .scrollFade{ width:100%; }
+  #myTopnav .header-right .dropdown{ display:none; }   /* hides the empty helper div */
+
+  /* each link starts tucked up + invisible... */
+  #myTopnav .header-right a{
+    float:none;
+    display:block;
+    width:100%;
+    text-align:right;
+    padding:12px 18px 12px 0;
+    margin:0;
+    opacity:0;
+    transform:translateY(-12px);
+    transition:opacity .3s ease,
+               transform .45s cubic-bezier(.34,1.56,.64,1);   /* gentle spring */
+  }
+  /* ...then springs into place when the menu opens */
+  #navtoggle:checked ~ .header-right a{
+    opacity:1;
+    transform:translateY(0);
+  }
+  /* stagger them so they cascade like liquid */
+  #navtoggle:checked ~ .header-right a:nth-of-type(1){ transition-delay:.12s; }
+  #navtoggle:checked ~ .header-right a:nth-of-type(2){ transition-delay:.18s; }
+  #navtoggle:checked ~ .header-right a:nth-of-type(3){ transition-delay:.24s; }
+  #navtoggle:checked ~ .header-right a:nth-of-type(4){ transition-delay:.30s; }
+
+  #myTopnav .header-right a h2,
+  #myTopnav .header-right a h3{
+    margin:0;
+    font-size:1.4em;
+  }
+  #myTopnav .header-right a h3 br{ display:none; }   /* "marketing designs" on one line */
+}
+
+/* =====================================================================
+   CUSTOM CURSOR  -  a brand-blue dot, ring on clickable elements
+   (pure CSS, inline SVG - no image file needed). Always keeps a normal
+   fallback after the comma in case SVG cursors aren't supported.
+   ===================================================================== */
+/* Your custom cursor.svg (place the file next to stylesheet.css).
+   The "6 4" is the hotspot - the exact click point - near the arrow's tip.
+   Nudge those two numbers if clicks feel slightly off. */
+html, body{
+  cursor: url('cursor.png') 6 4, auto;
+}
+a, button, label, .btn, .zoomD, .nav-burger, [onclick]{
+  cursor: url('cursor.png') 6 4, pointer;
+}
