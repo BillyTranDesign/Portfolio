@@ -766,12 +766,46 @@ html {
    (pure CSS, inline SVG - no image file needed). Always keeps a normal
    fallback after the comma in case SVG cursors aren't supported.
    ===================================================================== */
-/* Your custom cursor.svg (place the file next to stylesheet.css).
-   The "6 4" is the hotspot - the exact click point - near the arrow's tip.
-   Nudge those two numbers if clicks feel slightly off. */
+/* Your custom cursor. Use a PNG (~40px, transparent background) for the
+   widest browser support - Safari does NOT support SVG cursors.
+   Put cursor.png next to stylesheet.css.
+   "6 4" is the hotspot (the click point) - aim it at the arrow tip. */
 html, body{
   cursor: url('cursor.png') 6 4, auto;
 }
 a, button, label, .btn, .zoomD, .nav-burger, [onclick]{
   cursor: url('cursor.png') 6 4, pointer;
+}
+
+/* =====================================================================
+   ANGLED SCROLLING MARQUEE  -  pure CSS, no JavaScript
+   ---------------------------------------------------------------------
+   Drop the matching HTML wherever you want the strip (see snippet).
+   ===================================================================== */
+.marquee{
+  overflow:hidden;
+  background:#314f94;
+  transform:rotate(-2deg);
+  width:106%;
+  margin-left:-3%;          /* bleeds past the edges so the tilt looks full-width */
+  padding:14px 0;
+  margin-top:40px;
+  margin-bottom:40px;
+}
+.marquee-track{
+  display:flex;
+  width:max-content;
+  white-space:nowrap;
+  animation:marquee 26s linear infinite;
+  font-family:'visbybold', sans-serif;
+  font-size:26px;
+  color:#FBF6EC;            /* cream text */
+}
+.marquee-track span{ display:inline-flex; align-items:center; }
+.marquee .star{ margin:0 26px; opacity:.6; }   /* the ✦ separators */
+@keyframes marquee{ to{ transform:translateX(-50%); } }   /* loops seamlessly */
+
+/* respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+  .marquee-track{ animation:none; }
 }
