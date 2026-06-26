@@ -167,35 +167,35 @@ document.addEventListener('DOMContentLoaded', function() {
   scrollFade();
 });
 
-// ===== LOADING SCREEN: blinking battery + logo fade-in =====
+// ===== LOADING SCREEN: blinking battery + logo fade-in (robust) =====
 (function(){
   var loader = document.getElementById('loader');
   if(!loader) return;
+  function hide(){ loader.classList.add('hide'); }
+
   var segs  = loader.querySelectorAll('.batt-seg');
   var pctEl = loader.querySelector('.loader-pct');
   var logo  = loader.querySelector('.loader-logo');
-
   var level = 0, loaded = false;
   window.addEventListener('load', function(){ loaded = true; });
 
-  function render(){
-    segs.forEach(function(s, i){
-      s.classList.remove('filled','charging');
-      if(i < level) s.classList.add('filled');          // already charged
-      else if(i === level) s.classList.add('charging');  // currently filling (blinks)
-    });
-    pctEl.textContent = (level * 25) + '%';
-    if(logo) logo.style.opacity = level / 4;             // fade the logo in with the charge
-  }
-  render();
-
   var timer = setInterval(function(){
-    var cap = loaded ? 4 : 3;            // hold at 75% until the page is ready
-    if(level < cap){ level++; render(); }
-    if(level >= 4){
-      clearInterval(timer);
-      pctEl.textContent = '100%';
-      setTimeout(function(){ loader.classList.add('hide'); }, 500);
-    }
+    try{
+      var cap = loaded ? 4 : 3;            // hold at 75% until the page is ready
+      if(level < cap){ level++; }
+      for(var i = 0; i < segs.length; i++){   // plain loop (no NodeList.forEach)
+        segs[i].className = 'batt-seg' + (i < level ? ' filled' : (i === level ? ' charging' : ''));
+      }
+      if(pctEl) pctEl.textContent = (level * 25) + '%';
+      if(logo)  logo.style.opacity = level / 4;
+      if(level >= 4){
+        clearInterval(timer);
+        if(pctEl) pctEl.textContent = '100%';
+        setTimeout(hide, 500);
+      }
+    }catch(e){ clearInterval(timer); hide(); }   // if anything errors, reveal the page
   }, 700);   // ~2.8s to fully charge
+
+  // FAIL-SAFE: never let the loader trap the page, no matter what
+  setTimeout(hide, 8000);
 })();

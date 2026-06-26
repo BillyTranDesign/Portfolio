@@ -599,6 +599,18 @@ html {
   padding-top:0 !important;     /* overrides inline padding-top:5px */
 }
 
+/* --- homepage gallery as an aligned 2-column grid (no more stagger) --- */
+.home-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  align-items:start;          /* each row lines up at the top */
+}
+.home-gallery .container{ margin-bottom:0; }   /* spacing handled by the grid gap */
+@media screen and (max-width:700px){
+  .home-gallery{ grid-template-columns:1fr; }  /* single column on phones */
+}
+
 /* --- same blue frame for the OTHER gallery layouts (photography /
    3-column / grid). These images aren't wrapped the same way, so the
    border goes directly on the image. ----------------------------------- */
@@ -762,8 +774,14 @@ html {
 }
 
 /* =====================================================================
-   CUSTOM CURSOR 
+   CUSTOM CURSOR  -  a brand-blue dot, ring on clickable elements
+   (pure CSS, inline SVG - no image file needed). Always keeps a normal
+   fallback after the comma in case SVG cursors aren't supported.
    ===================================================================== */
+/* Your custom cursor. Use a PNG (~40px, transparent background) for the
+   widest browser support - Safari does NOT support SVG cursors.
+   Put cursor.png next to stylesheet.css.
+   "6 4" is the hotspot (the click point) - aim it at the arrow tip. */
 html, body{
   cursor: url('cursor.png') 6 4, auto;
 }
