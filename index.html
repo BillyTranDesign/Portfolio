@@ -85,8 +85,17 @@
 <h2>Based in Sunny San Francisco, California. 🌁</h2>
 	</header>
 
-<br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
+
+<!-- angled scrolling marquee -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Packaging Design <i class="star">&#10022;</i> Brand Identity <i class="star">&#10022;</i> Email &amp; Marketing <i class="star">&#10022;</i> Experiential <i class="star">&#10022;</i> Photography <i class="star">&#10022;</i> Art Direction <i class="star">&#10022;</i>&nbsp;</span>
+    <span>Packaging Design <i class="star">&#10022;</i> Brand Identity <i class="star">&#10022;</i> Email &amp; Marketing <i class="star">&#10022;</i> Experiential <i class="star">&#10022;</i> Photography <i class="star">&#10022;</i> Art Direction <i class="star">&#10022;</i>&nbsp;</span>
+  </div>
+</div>
+
+<br><br><br>
    <header class="header show-on-scroll">
     <h2 align="center"> ✨ Some cool projects I've worked on ✨ </h2>
 	</header>
@@ -180,5 +189,15 @@
 			  <h5> Coded with ❤️ by © Billy Tran Design</h5>
   </div>
 </footer>
+
+<!-- Emergency fail-safe: reveals the page even if a script file fails to load.
+     This is plain inline JS, so it runs no matter what. -->
+<script>
+  setTimeout(function(){
+    var l = document.getElementById('loader');
+    if(l){ l.classList.add('hide'); }
+  }, 6000);
+</script>
+
 	</body>
 </html>
