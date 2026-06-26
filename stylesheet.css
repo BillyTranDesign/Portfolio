@@ -762,14 +762,8 @@ html {
 }
 
 /* =====================================================================
-   CUSTOM CURSOR  -  a brand-blue dot, ring on clickable elements
-   (pure CSS, inline SVG - no image file needed). Always keeps a normal
-   fallback after the comma in case SVG cursors aren't supported.
+   CUSTOM CURSOR 
    ===================================================================== */
-/* Your custom cursor. Use a PNG (~40px, transparent background) for the
-   widest browser support - Safari does NOT support SVG cursors.
-   Put cursor.png next to stylesheet.css.
-   "6 4" is the hotspot (the click point) - aim it at the arrow tip. */
 html, body{
   cursor: url('cursor.png') 6 4, auto;
 }
@@ -808,4 +802,51 @@ a, button, label, .btn, .zoomD, .nav-burger, [onclick]{
 /* respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce){
   .marquee-track{ animation:none; }
+}
+
+/* =====================================================================
+   LOADING SCREEN  -  logo + battery that "charges" up, then fades out
+   ---------------------------------------------------------------------
+   Needs the #loader HTML at the top of <body> + the small hide script.
+   ===================================================================== */
+#loader{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  background:#FBF6EC;            /* cream */
+  transition:opacity .7s ease, visibility .7s ease;
+}
+#loader.hide{ opacity:0; visibility:hidden; pointer-events:none; }  /* fade away when done */
+
+/* column layout for the loader contents */
+.loader-panel{ display:flex; flex-direction:column; align-items:center; gap:24px; }
+
+/* the logo - starts invisible; JS fades it in as the battery charges */
+.loader-logo{
+  display:block; width:200px; max-width:54vw; height:auto;
+  opacity:0; transition:opacity .5s ease;
+  animation:loaderBob 3s ease-in-out infinite;
+}
+@keyframes loaderBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+
+/* battery shell */
+.battery{
+  position:relative; width:180px; height:80px;
+  border:5px solid #314f94; border-radius:16px; padding:8px; box-sizing:border-box;
+  display:flex; gap:7px;
+}
+.battery::after{   /* the little terminal nub on the right */
+  content:""; position:absolute; right:-13px; top:50%; transform:translateY(-50%);
+  width:10px; height:30px; background:#314f94; border-radius:0 6px 6px 0;
+}
+/* the 4 segments (JS adds .filled / .charging) */
+.batt-seg{ flex:1; border-radius:4px; background:rgba(49,79,148,.15); }
+.batt-seg.filled{ background:#314f94; }
+.batt-seg.charging{ background:#314f94; animation:battBlink .7s steps(1,end) infinite; }  /* blinks while it fills */
+@keyframes battBlink{ 50%{ opacity:.15; } }
+
+.loader-pct{ font-weight:800; font-size:28px; color:#314f94; }
+.loader-label{ letter-spacing:.25em; text-transform:uppercase; font-size:11px; opacity:.65; color:#314f94; }
+
+@media (prefers-reduced-motion: reduce){
+  .loader-logo, .batt-seg.charging{ animation:none; }
 }

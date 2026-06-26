@@ -166,3 +166,36 @@ window.addEventListener('resize', scrollFade);
 document.addEventListener('DOMContentLoaded', function() {
   scrollFade();
 });
+
+// ===== LOADING SCREEN: blinking battery + logo fade-in =====
+(function(){
+  var loader = document.getElementById('loader');
+  if(!loader) return;
+  var segs  = loader.querySelectorAll('.batt-seg');
+  var pctEl = loader.querySelector('.loader-pct');
+  var logo  = loader.querySelector('.loader-logo');
+
+  var level = 0, loaded = false;
+  window.addEventListener('load', function(){ loaded = true; });
+
+  function render(){
+    segs.forEach(function(s, i){
+      s.classList.remove('filled','charging');
+      if(i < level) s.classList.add('filled');          // already charged
+      else if(i === level) s.classList.add('charging');  // currently filling (blinks)
+    });
+    pctEl.textContent = (level * 25) + '%';
+    if(logo) logo.style.opacity = level / 4;             // fade the logo in with the charge
+  }
+  render();
+
+  var timer = setInterval(function(){
+    var cap = loaded ? 4 : 3;            // hold at 75% until the page is ready
+    if(level < cap){ level++; render(); }
+    if(level >= 4){
+      clearInterval(timer);
+      pctEl.textContent = '100%';
+      setTimeout(function(){ loader.classList.add('hide'); }, 500);
+    }
+  }, 700);   // ~2.8s to fully charge
+})();
