@@ -204,52 +204,61 @@ header.is-visible {
     text-align: right;
   }
 }
-/* Style for creating an image with a text overlay fade */
+/* Homepage gallery: permanent project captions, no hover reveal */
 .container {
-    position: relative;
-    width: 100%;
+  width: 100%;
 }
+
 .image {
-  opacity: 1;
   display: block;
   width: 100%;
   height: auto;
-  transition: 1s ease;
-  backface-visibility: hidden;
-}
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.container:hover .image {
-  opacity: .4;
-}
-.container:hover .middle {
   opacity: 1;
+  transition: none;
 }
-.text {
-  background-color: none;
+
+.home-gallery .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-gallery .middle {
+  position: static;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  transform: none;
+  text-align: left;
+  padding: 14px 4px 0;
+}
+
+.home-gallery .text {
+  padding: 0;
   color: #314f94;
-  font-weight: 600;
-  font-size: 24px;
-  border-radius: 30px;
-  padding: 16px 16px;
+  font-size: 18px;
 }
-/*Flexbox text when website loads on mobile/tablet */
-@media screen and (max-width: 1000px) {
-  .text {
-     background-color: transparent;
-  color: black;
-  font-weight: 600;
-  font-size: 12px;
-  border-radius: 25px;
-  padding: 16px 32px;
+
+.home-gallery .text h3 {
+  margin: 0 0 4px;
+  font-family: 'visbybold', sans-serif;
+  font-size: 1.15em;
+  line-height: 1.1;
+}
+
+.home-gallery .text h4 {
+  margin: 0;
+  font-family: 'visbyregular', sans-serif;
+  font-size: 0.75em;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 700px) {
+  .home-gallery .middle {
+    padding-top: 12px;
+  }
+
+  .home-gallery .text {
+    font-size: 17px;
   }
 }
 /* Type writer animation and typeface*/
@@ -461,10 +470,15 @@ img.rounded-corners{
   opacity: 0;
 	}
 .d1
-video {
-	position: center;
-    width: 100%;
-    max-width: 1080px;
+/* =====================================================================
+   GLOBAL VIDEO
+   ===================================================================== */
+
+video{
+    display:block;
+    width:100%;
+    height:auto;
+}max-width: 1080px;
 }
 html {
   scroll-behavior: smooth;
@@ -591,14 +605,16 @@ html {
   font-size:0;
   line-height:0;
 }
-.row .container > a .image{
-  display:block;
-  width:100%;
-  border:0 !important;
-  border-radius:0 !important;   /* overrides inline border-radius */
-  padding-top:0 !important;     /* overrides inline padding-top:5px */
-}
+.row .container > a .image,
+.row .container > a video{
+    display:block;
+    width:100%;
+    height:auto;
 
+    border:0 !important;
+    border-radius:0 !important;
+    padding-top:0 !important;
+}
 /* --- homepage gallery as an aligned 2-column grid (no more stagger) --- */
 .home-gallery{
   display:grid;
@@ -867,4 +883,33 @@ a, button, label, .btn, .zoomD, .nav-burger, [onclick]{
 
 @media (prefers-reduced-motion: reduce){
   .loader-logo, .batt-seg.charging{ animation:none; }
+}
+
+
+
+.project-gallery{
+    columns: 2;
+    column-gap: 24px;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.project-gallery img,
+.project-gallery video{
+    width: 100%;
+    display: block;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    break-inside: avoid;
+}
+
+@media screen and (max-width:768px){
+
+    .project-gallery{
+        columns: 1;
+        column-gap: 0;
+        padding: 0 20px;
+    }
+
 }
